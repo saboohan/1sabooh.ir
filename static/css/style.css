@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'tanha';
+    src: url('../fonts/Tanha.ttf');
+    src: url('../fonts/Tanha.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Tanha.woff') format('woff'),
+         url('../fonts/Tanha.ttf') format('truetype');
+    font-weight: normal;
+}
+.pf {
+    font-family: "tanha" !important;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
