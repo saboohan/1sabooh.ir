@@ -23,7 +23,6 @@ p{
 
 p > a , poet > a {
     color: #707070;
-    text-decoration: underline;
 }
 
 .btn-submit{
@@ -153,7 +152,6 @@ poet{
 
 poet > a{
     color:#707070;
-    text-decoration: underline;
 
 }
 
