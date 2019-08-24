@@ -15,7 +15,7 @@ script:
 
 after_success:
  - pip install fandogh_cli
- - fandogh login --username $FAN_USR --password $FAN_PASS
+ - COLLECT_ERROR=True fandogh login --username $FAN_USR --password $FAN_PASS
  - fandogh image init --name=sabooh
  - fandogh image publish --version v$TRAVIS_JOB_NUMBER
  - fandogh service deploy --version v$TRAVIS_JOB_NUMBER --hosts 1sabooh.ir --name sabooh --port 80
