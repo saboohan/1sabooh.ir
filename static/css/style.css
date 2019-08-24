@@ -1,16 +1,169 @@
-@font-face {
-    font-family: 'tanha';
-    src: url('../fonts/Tanha.ttf');
-    src: url('../fonts/Tanha.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Tanha.woff') format('woff'),
-         url('../fonts/Tanha.ttf') format('truetype');
-    font-weight: normal;
+.day {
+    animation-name: today;
+    animation-duration: .5s;
+    background-color: #f1f1f1;
 }
-.pf {
-    font-family: "tanha" !important;
+
+.night {
+    animation-name: tonight;
+    animation-duration: .5s;
+    background-color: #292728;
+    color: #f1f1f1 !important;
+
+}
+footer > div{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around;
+
+}
+p{
+    font-family: 'vazir';
+}
+
+p > a , poet > a {
+    color: #707070;
+    text-decoration: underline;
+}
+
+.btn-submit{
+    background: none;
+    padding: 10px;
+    border: none;
+}
+
+
+.select-poet{
+    color: #707070 !important;
+    font-family: vazir !important;
+
+}
+
+
+.select-poet > select{
+    color: #707070;
+    background: transparent;
+    border: none;
+}
+
+.select-poet > select:focus{
+    color: #707070;
+    background: transparent;
+    border: none;
+    outline:none;
+
+    border-color: rgba(126, 239, 104, 0.8);
+    box-shadow: none;
+    outline: 0 none;
+
+
+}
+
+
+p > a:hover , poet > a:hover{
+    color: #808080  ;
+    text-decoration: underline;
+}
+.light-btn{
+    background: none !important;
+    border: none !important;
+    padding: 10px;
+    outline: none;
+}
+
+button:active,
+button:focus,
+button, .dropdown-toggle:active , .dropdown-toggle:focus , .dropdown-toggle{
+    -moz-outline-style: none !important;
+    outline: none !important;
+}
+
+.main{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main > poem{
+    margin-top: -8rem;
+}
+.btn-gray{
+    color: #9c9c9c !important;
+}
+.dropdown-menu{
+    text-align: right !important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    color: #9c9c9c !important;
+}
+.dropdown-menu > li > a{
+    color: #9c9c9c !important;
+
+}
+.dropdown{
+    font-family: 'vazir' !important;
+    direction: rtl !important;
+    color: #9c9c9c !important;
+}
+
+@keyframes today {
+    from {
+        background-color: #292728;
+    }
+    to {
+        background-color: #f1f1f1;
+    }
+}
+@keyframes tonight {
+    from {
+        background-color: #f1f1f1;
+    }
+    to {
+        background-color: #292728;
+    }
+}
+
+
+
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+
+poem{
+    font-family: 'vazir';
+    line-height: 1.9em;
+    font-size: 2.3rem;
+
+    text-align: center;
+    display: block;
+}
+
+
+body > main {
+
+}
+poet{
+    font-family: 'vazir';
+    font-size: 1.3rem;
+    line-height: 1.1em;
+    text-align: center;
+    display: block;
+}
+
+poet > a{
+    color:#707070;
+    text-decoration: underline;
+
+}
+
+poet > a:hover{
+    color:#707070 !important;
+
 }
 body {
   display: flex;
+    background: #F1F1F1;
   min-height: 100vh;
   flex-direction: column;
 }
