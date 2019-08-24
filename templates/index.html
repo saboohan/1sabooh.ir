@@ -1,114 +1,99 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<meta name='author' content='Mostafa Asadi'>
-	<meta name="twitter:card" content="summary">
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="صبوح" />
-	<meta name="description" content="صبوح؛ می صبحگاهی را گویند">
-	<meta property="og:description" content="صبوح؛ می صبحگاهی را گویند">
-	<meta name="twitter:description" content="صبوح؛ می صبحگاهی را گویند">
-	<meta name="keywords" content="صبوح,شعر,فال,بیت,شاعر,یک بیت,مصرع">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>صبوح</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/materialize-rtl.min.css') }}">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-	<script src="https://kit.fontawesome.com/bed6a0991b.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name='author' content='Mostafa Asadi'>
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="صبوح" />
+    <meta name="description" content="صبوح؛ می صبحگاهی را گویند">
+    <meta property="og:description" content="صبوح؛ می صبحگاهی را گویند">
+    <meta name="twitter:description" content="صبوح؛ می صبحگاهی را گویند">
+    <meta name="keywords" content="صبوح,شعر,فال,بیت,شاعر,یک بیت,مصرع">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صبوح |‌ شب رفت و صبوح آمد</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v20.1.1/dist/font-face.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-
-<body class="blue-grey lighten-5 rtl">
-	<nav class="nav-extended">
-		<div class="nav-wrapper blue">
-			<div class="container">
-				<a href="/" class="brand-logo pf">صبوح</a>
-				<div style="padding-top: 1em;" class="nav-content center">
-					<form action="/setcookie" method="POST" class="nav-title">
-						<div class="input-field rtl pf inline">
-							<select name="poet">
-								<option value="1" disabled selected>برای همیشه شاعری انتخاب کنید</option>
-								<option value="1">همه شاعران</option>
-								<option value="2">حافظ</option>
-								<option value="3">خیام</option>
-								<option value="5">مولوی</option>
-								<option value="7">سعدی</option>
-								<option value="19">اوحدی</option>
-								<option value="20">خواجو</option>
-								<option value="21">عراقی</option>
-								<option value="22">صائب</option>
-								<option value="25">هاتف اصفهانی</option>
-								<option value="26">ابوالسعید ابوالخیر</option>
-								<option value="28">باباطاهر</option>
-								<option value="29">محتشم کاشانی</option>
-								<option value="31">سیف فرغانی</option>
-								<option value="32">فروغی بسطامی</option>
-								<option value="33">عبید زاکانی</option>
-								<option value="34">امیرخسرو دهلوی</option>
-								<option value="35">شهریار</option>
-								<option value="40">سلمان ساوجی</option>
-								<option value="41">رهی معیری</option>
-							</select>
-						</div>
-						<button type="submit" style="background: none; padding: 0px; border: none;">
-							<i class="material-icons white-text">done</i>
-						</button>
-					</form>
-
-				</div>
-			</div>
-
-		</div>
-	</nav>
-	<main>
-		<section style="padding-top:3vw;">
-			<div class="container">
-				<div class="row">
-					<div class="col s12 center">
-						<div class="card-panel green darken-3 pf">
-							<div class="white-text">
-								<h3>{{ poem['m1'] }}</h3>
-								<h3>{{ poem['m2'] }}</h3>
-							</div>
-							<a href="{{ poem['url'] }}" target="_blank">
-								<h5 class="pf white-text">
-									{{ poem['poet'] }}
-								</h5>
-							</a>
-						</div>
-					</div>
-					<script type="text/javascript">
-						document.addEventListener('DOMContentLoaded', function() {
-							var options = document.querySelectorAll('option');
-							var elems = document.querySelectorAll('select');
-							var instances = M.FormSelect.init(elems, options);
-						});
-					</script>
-
-				</div>
-			</div>
-			</div>
-		</section>
-	</main>
-</body>
-<footer class="page-footer footer-copyright blue">
-	<div class="container">
-		<div class="grey-text text-lighten-4 right pf">
-			قدرت گرفته از
-			<a class="grey-text text-lighten-4 pf" href="http://ganjoor.net/">گنجور</a>
-			و
-			<a class="grey-text text-lighten-4 pf" href="https://fandogh.cloud/">فندق</a>
-		</div>
-		<a class="grey-text text-lighten-4 left" href="https://github.com/saboohan/1sabooh.ir">
-			<i class="fab fa-github"></i>
-		</a>
-		<br><br>
-	</div>
+<body dir="rtl">
+<header class="pt-3">
+    <ul class="nav nav-pills nav-justified">
+        <li class="nav-item">
+            <button onclick="change()" class="light-btn">
+                
+                <img src="{{ url_for('static', filename='img/light.png') }}">
+            </button>
+        </li>
+        <li class="nav-item">
+            <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" height="75">
+        </li>
+        <li class="nav-item">
+            <form action="/setcookie" method="POST" class="form-check-inline select-poet">
+                    <select name="poet" class="form-control">
+                        <option value="1" disabled selected>برای همیشه شاعری انتخاب کنید</option>
+                        <option value="1">همه شاعران</option>
+                        <option value="2">حافظ</option>
+                        <option value="3">خیام</option>
+                        <option value="5">مولوی</option>
+                        <option value="7">سعدی</option>
+                        <option value="19">اوحدی</option>
+                        <option value="20">خواجو</option>
+                        <option value="21">عراقی</option>
+                        <option value="22">صائب</option>
+                        <option value="25">هاتف اصفهانی</option>
+                        <option value="26">ابوالسعید ابوالخیر</option>
+                        <option value="28">باباطاهر</option>
+                        <option value="29">محتشم کاشانی</option>
+                        <option value="31">سیف فرغانی</option>
+                        <option value="32">فروغی بسطامی</option>
+                        <option value="33">عبید زاکانی</option>
+                        <option value="34">امیرخسرو دهلوی</option>
+                        <option value="35">شهریار</option>
+                        <option value="40">سلمان ساوجی</option>
+                        <option value="41">رهی معیری</option>
+                    </select>
+                <button type="submit" class="btn-submit">
+                    <img src="{{ url_for('static', filename='img/done-tick.png') }}" height="18" />
+                </button>
+            </form>
+        </li>
+    </ul>
+</header>
+<main class="main">
+    <poem>
+        {{ poem['m1'] }}
+        <br>
+        {{ poem['m2'] }}
+    </poem>
+    <poet><a target="_blank" href="{{ poem['url'] }}">{{ poem['poet'] }}</a></poet>
+</main>
+<footer class="footer mt-auto py-3 ">
+<div>
+        <p>قدرت گرفته از <a href="https://ganjoor.net/" target="_blank"> گنجور</a> و <a target="_blank" href="https://fandogh.cloud">فندق</a></p>
+        <p><a href="https://github.com/saboohan/" target="_blank">مشارکت در پروژه</a></p>
+</div>
 </footer>
-
+<script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $(".dropdown-menu li").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+<script>
+    document.body.classList.add('day');
+     function change() {
+        document.body.classList.toggle('night');
+        document.body.classList.toggle('day');
+    }
+</script>
+</body>
 </html>
