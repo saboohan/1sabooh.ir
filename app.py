@@ -1,8 +1,31 @@
 #!/usr/bin/python3
 import requests
-from flask import Flask, redirect, request, render_template, make_response
+from flask import Flask, request, render_template, make_response
 
 app = Flask(__name__)
+
+poets = {
+    '1': 'همه شاعران',
+    '2': 'حافظ',
+    '3': 'خیام',
+    '5': 'مولوی',
+    '7': 'سعدی',
+    '19': 'اوحدی',
+    '20': 'خواجو',
+    '21': 'عراقی',
+    '22': 'صائب',
+    '25': 'هاتف اصفهانی',
+    '26': 'ابوالسعید ابوالخیر',
+    '28': 'باباطاهر',
+    '29': 'محتشم کاشانی',
+    '31': 'سیف فرغانی',
+    '32': 'فروغی بسطامی',
+    '33': 'عبید زاکانی',
+    '34': 'امیرخسرو دهلوی',
+    '35': 'شهریار',
+    '40': 'سلمان ساوجی',
+    '41': 'رهی معیری'
+}
 
 
 def get_poem(poet):
@@ -19,29 +42,28 @@ def get_poem(poet):
         return False
 
 
-@app.route('/')
-def static_page():
-    poet = request.cookies.get('sabooh_poet') or '1'
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        poet = request.form['poet'] or '1'
+    else:
+        poet = request.cookies.get('sabooh_poet') or '1'
     poem = get_poem(poet)
     if poem:
-        resp = make_response(render_template('index.html', poem=poem))
+        resp = make_response(
+            render_template(
+                'index.html',
+                poem=poem,
+                fav_poet=poet,
+                poets=poets
+            )
+        )
+        resp.set_cookie('sabooh_poet', poet)
         return resp
     else:
         return render_template(
             'error.html'
         )
-
-
-@app.route('/setcookie', methods=['POST'])
-def setcookie():
-    try:
-        poet = request.form['poet']
-    except Exception:
-        poet = '1'
-
-    response = make_response(redirect('/'))
-    response.set_cookie('sabooh_poet', poet)
-    return response
 
 
 if __name__ == '__main__':
