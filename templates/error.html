@@ -13,58 +13,71 @@
 	<meta name="twitter:description" content="صبوح؛ می صبحگاهی را گویند">
 	<meta name="keywords" content="صبوح,شعر,فال,بیت,شاعر,یک بیت,مصرع">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>صبوح</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/materialize-rtl.min.css') }}">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>صبوح |‌ شب رفت و صبوح آمد</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-	<script src="https://kit.fontawesome.com/bed6a0991b.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v20.1.1/dist/font-face.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
-<body class="blue-grey lighten-5 rtl">
-	<nav>
-		<div class="nav-wrapper blue">
-			<div class="container">
-				<a href="/" class="brand-logo pf">صبوح</a>
-				<ul class="left">
-					<li>
-						<a href="/"><i class="material-icons">refresh</i></a>
-					</li>
-				</ul>
+<body dir="rtl" onload="getMode()">
+	<header class="pt-3">
+		<ul class="nav nav-pills nav-justified">
+			<li class="nav-item">
+				<button onclick="change()" class="light-btn">
+					<img src="{{ url_for('static', filename='img/light.png') }}">
+				</button>
+			</li>
+			<li class="nav-item">
+				<img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" height="75">
+			</li>
+		</ul>
+	</header>
+	<main class="main">
+	<section>
+		<div class="container">
+			<div class="poem">
+				<h1>خطا؛ در این دایره سرگردانند</h1>
 			</div>
 		</div>
-	</nav>
-	<main>
-		<section>
-			<br><br><br><br><br>
-			<div class="container">
-				<div class="row">
-					<div class="col s12 center">
-						<div class="card-panel red darken-3 pf">
-							<div class="white-text">
-								<h2>خطا؛ در این دایره سرگردانند</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+	</section>
 	</main>
-</body>
-<footer class="page-footer footer-copyright blue">
-	<div class="container">
-		<div class="grey-text text-lighten-4 right pf">
-			قدرت گرفته از
-			<a class="grey-text text-lighten-4 pf" href="http://ganjoor.net/">گنجور</a>
-			و
-			<a class="grey-text text-lighten-4 pf" href="https://fandogh.cloud/">فندق</a>
+	<footer class="footer mt-auto py-3 ">
+		<div>
+			<p>قدرت گرفته از <a href="https://ganjoor.net/" target="_blank"> گنجور</a> و <a target="_blank" href="https://fandogh.cloud">فندق</a></p>
+			<p><a href="https://github.com/saboohan/" target="_blank">مشارکت در پروژه</a></p>
 		</div>
-		<a class="grey-text text-lighten-4 left" href="https://github.com/saboohan/1sabooh.ir">
-			<i class="fab fa-github"></i>
-		</a>
-		<br><br>
-	</div>
-</footer>
+	</footer>
+	<script>
+		document.body.classList.add('day');
+
+		function change() {
+			document.body.classList.toggle('night');
+			document.body.classList.toggle('day');
+
+			var Mode = document.body.className;
+			document.cookie = "mode=" + Mode;
+		}
+
+		function getMode() {
+			var name = "mode=";
+			var decodedCookie = decodeURIComponent(document.cookie);
+			var ca = decodedCookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					var userMode = c.substring(name.length, c.length);
+					document.body.classList.toggle(userMode);
+				}
+			}
+			return "";
+		}
+	</script>
+</body>
 
 </html>

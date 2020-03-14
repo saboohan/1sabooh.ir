@@ -1,3 +1,5 @@
 .fandogh
 .git 
 __pycache__
+venv/
+.vscode/
