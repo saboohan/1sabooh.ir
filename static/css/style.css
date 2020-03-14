@@ -43,6 +43,9 @@ p > a , poet > a {
     color: #707070;
     background: transparent;
     border: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .select-poet > select:focus{
